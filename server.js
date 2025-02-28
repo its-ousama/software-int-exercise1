@@ -1,13 +1,20 @@
-require('dotenv').config({ path: `.env.${process.env.NODE_ENV || 'development'}` });
+const dotenv = require('dotenv');
+const path = require('path');
 const express = require('express');
 const pool = require('./db');
+
+const envFile = `.env.${process.env.NODE_ENV || 'development'}`;
+dotenv.config({ path: path.resolve(__dirname, envFile) });
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(express.json()); // Middleware to parse JSON requests
+app.use(express.json()); 
 
-// POST: Create a new user
+console.log(`Running in ${process.env.NODE_ENV} mode`);
+console.log(`Server is running on port ${PORT}`);
+
+
 app.post('/users', async (req, res) => {
     const { name, email } = req.body;
 
@@ -29,5 +36,5 @@ app.post('/users', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
