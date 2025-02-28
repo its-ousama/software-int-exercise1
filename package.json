@@ -1,0 +1,20 @@
+{
+  "name": "exercise-1",
+  "version": "1.0.0",
+  "description": "Git Branching and Environments: Exercise 1 \r Your task is to create a simple NodeJS application that includes a connection to a MongoDB database \r with environment-specific configurations for 3 environments (dev, release & prod) and load them \r dynamically. \r In this application you should have a small model with minimal services (CRUD) while following proper \r git flow and branching techniques. \r You will be judged based on the following: \r • Cleanliness of the structure/approach applied \r • Whether the application works or not \r • Proper handling of git branches and git flow",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.13.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
